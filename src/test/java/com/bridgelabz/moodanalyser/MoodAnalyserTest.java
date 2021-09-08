@@ -18,6 +18,7 @@ public class MoodAnalyserTest
 		Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
 	
+	
 	@Test
 	public void givenMessage_WhenHappy_ShouldReturnHappy() 
 	{
