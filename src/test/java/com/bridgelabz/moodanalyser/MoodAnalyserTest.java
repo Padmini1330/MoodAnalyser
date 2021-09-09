@@ -13,8 +13,8 @@ public class MoodAnalyserTest
 	public void givenMessage_WhenSad_ShouldReturnSad() 
 	{
 		
-		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood= moodAnalyser.analyseMood("This is a happy message");
+		MoodAnalyser moodAnalyser=new MoodAnalyser("This is a happy message");
+		String mood= moodAnalyser.analyseMood();
 		Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
 	
@@ -23,8 +23,8 @@ public class MoodAnalyserTest
 	public void givenMessage_WhenHappy_ShouldReturnHappy() 
 	{
 		
-		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood= moodAnalyser.analyseMood("This is a sad message");
+		MoodAnalyser moodAnalyser=new MoodAnalyser("This is a sad message");
+		String mood= moodAnalyser.analyseMood();
 		Assert.assertThat(mood, CoreMatchers.is("SAD"));
 	}
 	
