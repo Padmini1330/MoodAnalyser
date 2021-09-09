@@ -39,7 +39,7 @@ public class MoodAnalyserTest
 		}
 		catch(MoodAnalyserException e)
 		{
-			System.out.println("Enter proper message");
+			Assert.assertEquals(MoodAnalyserException.ExceptionType.ENTERED_NULL, e.type);
 		}
 		
 	}
@@ -55,7 +55,7 @@ public class MoodAnalyserTest
 		}
 		catch(MoodAnalyserException e)
 		{
-			System.out.println("This is an empty message. Enter proper message");
+			Assert.assertEquals(MoodAnalyserException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		
 	}
