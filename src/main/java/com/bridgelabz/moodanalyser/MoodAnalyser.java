@@ -13,10 +13,14 @@ public class MoodAnalyser
 		this.message=message;
 	}
 	
-	public String analyseMood() 
+	public String analyseMood() throws MoodAnalyserException
 	{
 		try 
 		{
+			if(message.length()==0) 
+			{
+				throw new MoodAnalyserException("Enter proper message");
+			} 
 			if(message.contains("sad"))
 				return "SAD";
 			else
@@ -24,7 +28,8 @@ public class MoodAnalyser
 		}
 		catch(NullPointerException e)
 		{
-			return "HAPPY";
+			throw new MoodAnalyserException("Enter proper message");
 		}
 	}
 }
+
